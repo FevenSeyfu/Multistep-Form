@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import BgImage from "./assets/images/bg-sidebar-desktop.svg";
+import FormStep1 from "./components/FormStep1";
+import FormStep2 from "./components/FormStep2";
+import FormStep3 from "./components/FormStep3";
+import FormStep4 from "./components/FormStep4";
 
 const App = () => {
   const steps = [
@@ -58,7 +62,22 @@ const App = () => {
           </tbody>
         </table>
       </div>
-      <div className=""></div>
+      <div className="">
+      {(() => {
+          switch (currentStep) {
+            case 0:
+              return <FormStep1 />;
+            case 1:
+              return <FormStep2 />;
+            case 2:
+              return <FormStep3 />;
+            case 3:
+              return <FormStep4 />;
+            default:
+              return null;
+          }
+        })()}
+      </div>
     </div>
   );
 };
