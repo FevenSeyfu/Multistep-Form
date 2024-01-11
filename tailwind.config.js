@@ -10,8 +10,8 @@ export default {
       {
         'primary-marine-blue': 'hsl(213, 96%, 18%)',
         'primary-purplish-blue': 'hsl(243, 100%, 62%)',
-        'primary-pastel-blue': 'hsl(228, 100%, 84%)',
-        'primary-pastel-purple': 'hsl(206, 94%, 87%)',
+        'primary-pastel-purple': 'hsl(228, 100%, 84%)',
+        'primary-pastel-blue': 'hsl(206, 94%, 87%)',
         'primary-strawberry-red': 'hsl(354, 84%, 57%)',
         // neutral
         'neutral-cool-gray': 'hsl(231, 11%, 63%)',
