@@ -139,6 +139,7 @@ const FormStep1 = () => {
             Next Step
           </button>
         </div>
+        {/* mobile */}
         <div className="md:hidden flex flex-row bg-white fixed w-screen  bottom-0 left-0 p-4 justify-end">
           <button
             className="bg-primary-marine-blue text-white rounded-md w-32 p-3 disabled:opacity-90"

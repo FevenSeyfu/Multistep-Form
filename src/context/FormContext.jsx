@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer, useState } from "react";
 
 const FormContext = createContext();
 const initialState = {
-  step:1,
+  step:2,
   formData: {
     name: '',
     email : '',
