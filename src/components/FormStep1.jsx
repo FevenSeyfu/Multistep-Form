@@ -126,9 +126,22 @@ const FormStep1 = () => {
           onChange={(e) => handleChange("phone", e)}
           onBlur={() => handleBlur("phone")}
         />
-        <div className="flex justify-end mt-8">
+        <div className="hidden md:flex justify-end mt-8">
           <button
-            className="bg-primary-marine-blue text-white rounded-md w-32 p-3 disabled:opacity-50"
+            className="bg-primary-marine-blue text-white rounded-md w-32 p-3 disabled:opacity-90"
+            onClick={() => {
+              if (isFormValid()) {
+                dispatch({ type: "NEXT_STEP" });
+              }
+            }}
+            disabled={!isFormValid()}
+          >
+            Next Step
+          </button>
+        </div>
+        <div className="md:hidden flex flex-row bg-white fixed w-screen  bottom-0 left-0 p-4 justify-end">
+          <button
+            className="bg-primary-marine-blue text-white rounded-md w-32 p-3 disabled:opacity-90"
             onClick={() => {
               if (isFormValid()) {
                 dispatch({ type: "NEXT_STEP" });
