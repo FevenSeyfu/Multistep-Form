@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useFormContext } from "../context/FormContext";
-import { IoMdCheckmark } from "react-icons/io";
+import Checkmark from "../assets/images/icon-checkmark.svg";
 const FormStep3 = () => {
   const { state, dispatch } = useFormContext();
   const [addOn, setAddOn] = useState([]);
@@ -49,7 +49,7 @@ const FormStep3 = () => {
             }`}
           >
             {addOn.includes("online-service") && (
-              <IoMdCheckmark className="text-white md:text-2xl" />
+              <img src={Checkmark} alt="Checkmark " className="text-white md:text-2xl" />
             )}
           </label>
           <div className="font-bold">
@@ -81,7 +81,7 @@ const FormStep3 = () => {
             }`}
           >
             {addOn.includes("large-storage") && (
-              <IoMdCheckmark className="text-white md:text-2xl" />
+              <img src={Checkmark} alt="Checkmark " className="text-white md:text-2xl" />
             )}
           </label>
           <div className="font-bold">
@@ -113,7 +113,7 @@ const FormStep3 = () => {
             }`}
           >
             {addOn.includes("customizable-profile") && (
-              <IoMdCheckmark className="text-white md:text-2xl" />
+              <img src={Checkmark} alt="Checkmark " className="text-white md:text-2xl" />
             )}
           </label>
           <div className="font-bold">
