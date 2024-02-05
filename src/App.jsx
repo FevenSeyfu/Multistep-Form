@@ -67,7 +67,7 @@ const App = () => {
             ))}
           </ul>
         </div>
-        <div className="absolute top-[6rem] bg-white rounded-xl w-[90%] py-[1rem] px-[2rem]">
+        <div className="absolute top-[6rem] bg-white rounded-xl w-[90%] py-[1rem] px-6 md:px-[2rem]">
           <MainForm  step={state.step} />
         </div>
       </div>
