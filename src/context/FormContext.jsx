@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer, useState } from "react";
 
 const FormContext = createContext();
 const initialState = {
-  step:3,
+  step:1,
   formData: {
     name: '',
     email : '',
@@ -27,7 +27,6 @@ const FormProvider = ({ children }) => {
   
   return (
       <FormContext.Provider value={{state,dispatch}}>
-        {console.log(state.formData)}
         {children}
       </FormContext.Provider>
     )
