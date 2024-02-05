@@ -50,9 +50,8 @@ const App = () => {
       {/* mobile */}
       <div className="relative md:hidden flex flex-col w-full h-screen items-center">
         <div
-          className="w-screen h-[10rem] bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: `url(${BgSidebarMobile})` }}
-        >
+          className=" bg-[url('/src/assets/images/bg-sidebar-mobile.svg')] w-screen h-[10rem] bg-cover bg-no-repeat bg-center"
+       >
           <ul className="flex flex-row w-full pt-8 justify-center gap-4">
             {steps.map((step, index) => (
               <li
@@ -74,8 +73,7 @@ const App = () => {
       {/* desktop */}
       <div className="hidden md:flex bg-white w-[70vw] h-[80vh] rounded-xl p-3 gap-[4rem]">
         <div
-          className="w-[270px] rounded-xl h-full bg-cover bg-repeat bg-bottom"
-          style={{ backgroundImage: `url(${BgImage})` }}
+          className="w-[270px] rounded-xl h-full bg-cover bg-repeat bg-bottom bg-[url('/src/assets/images/bg-sidebar-desktop.svg')]"
         >
           <table className="table-fixed">
             <tbody className="flex flex-col text-white mt-8 mx-8 gap-4 ">
