@@ -27,6 +27,7 @@ const FormProvider = ({ children }) => {
   
   return (
       <FormContext.Provider value={{state,dispatch}}>
+        {console.log(state.formData)}
         {children}
       </FormContext.Provider>
     )

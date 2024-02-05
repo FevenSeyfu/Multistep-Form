@@ -24,10 +24,7 @@ const FormStep2 = () => {
     });
     dispatch({ type: "NEXT_STEP" });
   };
-  const isFormValid = () => {
-    const { billingCycle, billingPlan } = state.formData;
-    return true;
-  };
+
   return (
     <div className="flex flex-col my-2 gap-4">
       <div>
@@ -145,24 +142,14 @@ const FormStep2 = () => {
         <div className="hidden md:flex justify-between mt-8">
           <button
             className=" text-xl text-neutral-cool-gray hover:cursor-pointer hover:text-black"
-            onClick={() => {
-              if (isFormValid()) {
-                dispatch({ type: "PREVIOUS_STEP" });
-              }
-            }}
-            disabled={!isFormValid()}
+            onClick={() => { dispatch({ type: "PREVIOUS_STEP" }) }}
           >
             Go Back
           </button>
 
           <button
             className="bg-primary-marine-blue text-white rounded-md w-32 p-3 disabled:opacity-50"
-            onClick={() => {
-              if (isFormValid()) {
-                handleSubmission();
-              }
-            }}
-            disabled={!isFormValid()}
+            onClick={handleSubmission}
           >
             Next Step
           </button>
@@ -172,24 +159,14 @@ const FormStep2 = () => {
         <div className="md:hidden flex flex-row bg-white fixed w-screen  bottom-0 left-0 p-4 justify-between">
           <button
             className=" text-xl text-neutral-cool-gray hover:cursor-pointer hover:text-black"
-            onClick={() => {
-              if (isFormValid()) {
-                dispatch({ type: "PREVIOUS_STEP" });
-              }
-            }}
-            disabled={!isFormValid()}
+            onClick={() => { dispatch({ type: "PREVIOUS_STEP" })}}
           >
             Go Back
           </button>
 
           <button
             className="bg-primary-marine-blue text-white rounded-md w-32 p-3 disabled:opacity-50"
-            onClick={() => {
-              if (isFormValid()) {
-                handleSubmission();
-              }
-            }}
-            disabled={!isFormValid()}
+            onClick={handleSubmission}
           >
             Next Step
           </button>
