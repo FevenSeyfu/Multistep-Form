@@ -65,6 +65,9 @@ const ConfirmationForm = ({setFormConfirmed}) => {
               <a
                 href="#"
                 className="text-sm font-normal underline text-neutral-cool-gray hover:text-primary-purplish-blue"
+                onClick={() => {
+                   dispatch({ type: 'GO_TO_STEP', payload: 2 });
+                }}
               >
                 Change
               </a>
@@ -110,7 +113,6 @@ const ConfirmationForm = ({setFormConfirmed}) => {
           <button
             className="bg-primary-purplish-blue text-white rounded-md w-32 p-3 hover:opacity-80 cursor-pointer"
             onClick={() => {
-              // dispatch({ type: "NEXT_STEP" });
               setFormConfirmed(true);
             }}
           >

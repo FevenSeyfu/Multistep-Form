@@ -35,7 +35,7 @@ const FormStep1 = () => {
   };
 
   const isValidPhone = (phone) => {
-    return /^\+?[1-9]\d{9,14}$/.test(phone);
+    return /^\+?[0-9]\d{9,14}$/.test(phone);
   };
 
   const isFormValid = () => {
