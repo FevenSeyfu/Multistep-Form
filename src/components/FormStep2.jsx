@@ -7,20 +7,23 @@ import ProIcon from "../assets/images/icon-pro.svg";
 const FormStep2 = () => {
   const { state, dispatch } = useFormContext();
   const [isMonthly, setIsMonthly] = useState(true);
+  const [plan,setPlan] =  useState('arcade')
 
   const handleToggleClick = (e) => {
     e.preventDefault();
     setIsMonthly((prevIsMonthly) => !prevIsMonthly);
   };
 
-  const handlePlanChange = (plan) => {
-    console.log(plan);
-    dispatch({
-      type: "UPDATE_FORM_DATA",
-      payload: { plan: plan },
-    });
+  const handlePlanChange = (selected) => {
+    setPlan(selected)
   };
-
+  const handleSubmission = async () => {
+    await dispatch({
+      type: "UPDATE_FORM_DATA",
+      payload: { billingPlan: plan, billingCycle: isMonthly ? 'monthly' : 'yearly' },
+    });
+    dispatch({ type: "NEXT_STEP" });
+  };
   const isFormValid = () => {
     const { billingCycle, billingPlan } = state.formData;
     return true;
@@ -37,9 +40,9 @@ const FormStep2 = () => {
         <div className="flex flex-col gap-2  md:gap-4 md:flex-row text-primary-marine-blue">
           {/* arcade */}
           <div
-            className={`flex flex-row items-center p-4 gap-4 md:flex-col md:items-start md:w-1/3 border border-neutral-cool-gray md:p-4 rounded-md mb-2 ${
-              state.formData.plan === "arcade" &&
-              "border-primary-marine-blue border-2 bg-neutral-alabaster "
+            className={`flex flex-row items-center p-4 gap-4 md:flex-col md:items-start md:w-1/3 border border-neutral-cool-gray md:p-4 rounded-md mb-2 cursor-pointer hover:border-primary-marine-blue  ${
+              plan === "arcade" &&
+              "border-primary-marine-blue border-2 bg-neutral-alabaster"
             }`}
             onClick={() => handlePlanChange("arcade")}
           >
@@ -61,8 +64,8 @@ const FormStep2 = () => {
           </div>
           {/* advanced */}
           <div
-            className={`flex flex-row items-center p-4 gap-4 md:flex-col md:items-start md:w-1/3 border border-neutral-cool-gray md:p-4 rounded-md mb-2 ${
-              state.formData.plan === "advanced" &&
+            className={`flex flex-row items-center p-4 gap-4 md:flex-col md:items-start md:w-1/3 border border-neutral-cool-gray md:p-4 rounded-md mb-2 cursor-pointer hover:border-primary-marine-blue hover:border-2${
+              plan === "advanced" &&
               "border-primary-marine-blue border-2 bg-neutral-alabaster "
             }`}
             onClick={() => handlePlanChange("advanced")}
@@ -85,8 +88,8 @@ const FormStep2 = () => {
           </div>
           {/* pro */}
           <div
-            className={`flex flex-row items-center p-4 gap-4 md:flex-col md:items-start md:w-1/3 border border-neutral-cool-gray md:p-4 rounded-md mb-2 ${
-              state.formData.plan === "pro" &&
+            className={`flex flex-row items-center p-4 gap-4 md:flex-col md:items-start md:w-1/3 border border-neutral-cool-gray md:p-4 rounded-md mb-2 cursor-pointer hover:border-primary-marine-blue hover:border-2${
+              plan === "pro" &&
               "border-primary-marine-blue border-2 bg-neutral-alabaster "
             }`}
             onClick={() => handlePlanChange("pro")}
@@ -156,7 +159,7 @@ const FormStep2 = () => {
             className="bg-primary-marine-blue text-white rounded-md w-32 p-3 disabled:opacity-50"
             onClick={() => {
               if (isFormValid()) {
-                dispatch({ type: "NEXT_STEP" });
+                handleSubmission();
               }
             }}
             disabled={!isFormValid()}
@@ -183,7 +186,7 @@ const FormStep2 = () => {
             className="bg-primary-marine-blue text-white rounded-md w-32 p-3 disabled:opacity-50"
             onClick={() => {
               if (isFormValid()) {
-                dispatch({ type: "NEXT_STEP" });
+                handleSubmission();
               }
             }}
             disabled={!isFormValid()}
