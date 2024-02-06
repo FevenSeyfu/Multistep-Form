@@ -1,3 +1,5 @@
+![Screenshot](https://github.com/FevenSeyfu/Multistep-Form/blob/dev/Multi-step-form.gif)
+
 # Frontend Mentor - Multi-step form solution
 
 This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ).I have used react with Context API to manage state that collects and store multi-step form inputs, I have use tailwindCSS for styling the components and build a layout compatible for different screen sizes. 
