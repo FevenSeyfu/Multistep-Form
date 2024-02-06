@@ -67,7 +67,7 @@ const FormStep1 = () => {
         <input
           type="text"
           name="name"
-          id="name"
+          id="nameInput"
           placeholder="e.g Stephen King"
           className={`w-full border ${
             touchedFields.name && !isRequiredFieldValid(state.formData.name)
@@ -91,7 +91,7 @@ const FormStep1 = () => {
         <input
           type="email"
           name="email"
-          id="email"
+          id="emailInput"
           placeholder="e.g stephenking@lorem.com"
           className={`w-full border ${
             (touchedFields.email && state.formData.email.trim() === "") || (touchedFields.email && !isValidEmail(state.formData.email)) 
@@ -115,7 +115,7 @@ const FormStep1 = () => {
         <input
           type="tel"
           name="phone"
-          id="phone"
+          id="phoneNumber"
           placeholder="e.g.+1 234 456 890"
           className={`w-full border ${
             (touchedFields.phone && state.formData.phone.trim() === "") || (touchedFields.phone && !isValidPhone(state.formData.phone)) 
