@@ -51,12 +51,12 @@ const ConfirmationForm = ({setFormConfirmed}) => {
     }
   return (
     <div className="flex flex-col my-8 gap-4">
-      <div>
+      <header>
         <h1 className="font-extrabold text-3xl">Finish Up</h1>
         <p className=" text-neutral-cool-gray leading-none">
           Double-check everything looks OK before confirming.
         </p>
-      </div>
+      </header>
       <div className="flex flex-col gap-2 bg-neutral-magnolia text-primary-marine-blue p-4 rounded-md">
         <ul>
           <li className="flex flex-row justify-between items-center font-extrabold">

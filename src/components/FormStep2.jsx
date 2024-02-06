@@ -27,12 +27,12 @@ const FormStep2 = () => {
 
   return (
     <div className="flex flex-col my-2 gap-4">
-      <div>
+      <header>
         <h1 className="font-extrabold text-3xl">Select your plan</h1>
         <p className="text-sm text-neutral-cool-gray leading-none">
           You have the option of monthly or yearly billing.
         </p>
-      </div>
+      </header>
       <form className="flex flex-col gap-2 ">
         <div className="flex flex-col gap-2  md:gap-4 md:flex-row text-primary-marine-blue">
           {/* arcade */}

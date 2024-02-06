@@ -50,15 +50,15 @@ const FormStep1 = () => {
 
   return (
     <div className="flex flex-col my-8 gap-4">
-      <div>
+      <header>
         <h1 className="font-extrabold text-3xl">Personal info</h1>
         <p className="text-sm text-neutral-cool-gray leading-none">
           Please provide your name, email, and phone number.
         </p>
-      </div>
+      </header>
       <form className="flex flex-col gap-2 ">
         <label
-          htmlFor="name"
+          htmlFor="nameInput"
           className="font-bold flex flex-row items-center justify-between"
         >
           Name
@@ -79,7 +79,7 @@ const FormStep1 = () => {
           onBlur={() => handleBlur("name")}
         />
 
-        <label htmlFor="email" className="font-bold flex flex-row items-center justify-between">
+        <label htmlFor="emailInput" className="font-bold flex flex-row items-center justify-between">
           Email Address
           {displayError("email", "This field is required")}
           {touchedFields.email && state.formData.email.trim() !== "" && !isValidEmail(state.formData.email) && (
@@ -103,7 +103,7 @@ const FormStep1 = () => {
           onBlur={() => handleBlur("email")}
         />
 
-        <label htmlFor="phone" className="font-bold flex flex-row items-center justify-between text-nowrap">
+        <label htmlFor="phoneNumber" className="font-bold flex flex-row items-center justify-between text-nowrap">
           Phone Number
           {displayError("phone", "This field is required")}
           {touchedFields.phone && state.formData.phone.trim() !== "" && !isValidPhone(state.formData.phone) && (

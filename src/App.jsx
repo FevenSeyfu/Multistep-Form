@@ -49,7 +49,7 @@ const App = () => {
     <>
       {/* mobile */}
       <div className="relative md:hidden flex flex-col w-full h-screen items-center">
-        <div
+        <nav
           className=" bg-[url('/src/assets/images/bg-sidebar-mobile.svg')] w-screen h-[10rem] bg-cover bg-no-repeat bg-center"
        >
           <ul className="flex flex-row w-full pt-8 justify-center gap-4">
@@ -65,14 +65,14 @@ const App = () => {
               </li>
             ))}
           </ul>
-        </div>
-        <div className="absolute top-[6rem] bg-white rounded-xl w-[90%] py-[1rem] px-6 md:px-[2rem]">
+        </nav>
+        <main className="absolute top-[6rem] bg-white rounded-xl w-[90%] py-[1rem] px-6 md:px-[2rem]">
           <MainForm  step={state.step} />
-        </div>
+        </main>
       </div>
       {/* desktop */}
       <div className="hidden md:flex bg-white w-[70vw] h-[80vh] rounded-xl p-3 gap-[4rem]">
-        <div
+        <nav
           className="w-[270px] rounded-xl h-full bg-cover bg-repeat bg-bottom bg-[url('/src/assets/images/bg-sidebar-desktop.svg')]"
         >
           <table className="table-fixed">
@@ -99,10 +99,10 @@ const App = () => {
               ))}
             </tbody>
           </table>
-        </div>
-        <div className="w-4/6 pr-16">
+        </nav>
+        <main className="w-4/6 pr-16">
           <MainForm  step={state.step}/>
-        </div>
+        </main>
       </div>
     </>
   );

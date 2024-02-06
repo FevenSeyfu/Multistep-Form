@@ -26,12 +26,12 @@ const FormStep3 = () => {
 
   return (
     <div className="flex flex-col my-2 gap-4">
-      <div>
+      <header>
         <h1 className="font-extrabold text-3xl">Pick add-ons</h1>
         <p className="text-sm text-neutral-cool-gray leading-none">
           Add-ons help enhance your gaming experience.
         </p>
-      </div>
+      </header>
       <form className="flex flex-col gap-2 md:gap-4 text-sm md:text-md text-primary-marine-blue">
         {/* Add-on Online */}
         <div
